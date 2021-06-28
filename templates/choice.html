@@ -1,0 +1,18 @@
+<h1>
+    Showing here the datas
+</h1>
+{%for p in all_c %}
+<h2>
+  {{p.choic}}
+</h2>
+<span>
+    {{p.question_c}}
+</span>
+<p>
+    {{p.question_c.question}}
+</p>
+<span>
+    {{p.question_c.questions_created_date}}
+</span>
+-
+{%endfor%}

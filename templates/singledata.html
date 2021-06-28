@@ -1,0 +1,25 @@
+ {%load static %}
+ <link href="{%static ''%}index.css" rel="stylesheet"  crossorigin="anonymous">
+
+<h1 id="main">
+    Showing here the datas
+</h1>
+
+
+<h2 style="background:red">
+    {{single_q.questionname}}
+</h2>
+{{single_q.question}}
+<span class="created_data">{{single_q.questions_created_date}}</span>
+
+
+
+<form method="post" action="{%url 'DjangoBanglaApp:vote' single_q.id %}">
+{%csrf_token%}
+    {%for choice_data in single_q.choice_set.all %}
+<input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice_data.id }}">
+<label for="choice{{ forloop.counter }}">{{ choice_data.choic }}</label><br>
+    {%endfor%}
+
+<input style="background:yellow" type="submit" value="Vote">
+</form>

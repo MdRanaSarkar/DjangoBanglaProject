@@ -1,0 +1,17 @@
+
+<h1>
+    Showing here the datas
+</h1>
+{%if all_qq%}
+{%for p in all_qq %}
+<h2>
+   <a href="{% url  'DjangoBanglaApp:idshow' questionid=p.id %}"> {{p.questionname}}</a>
+</h2>
+
+{%endfor%}
+{%else%}
+<p>
+    No data available here
+</p>
+
+{%endif%}

@@ -1,0 +1,12 @@
+{% load static %}
+ <link href="{%static ''%}index.css" rel="stylesheet"  crossorigin="anonymous">
+
+
+{%for p in resutls.choice_set.all %}
+
+  <li>{{ p.choic }} -- {{ p.votes }} vote{{ p.votes|pluralize }}
+
+{%endfor%}
+
+
+<a href="{% url 'DjangoBanglaApp:idshow' resutls.id %}">Vote again?</a>
